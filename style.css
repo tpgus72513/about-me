@@ -34,18 +34,18 @@ h2 {
 
 h1 {
   margin: 14px 0 18px;
-  font-size: 72px;
+  font-size: 48px;
   letter-spacing: 0.08em;
 }
 
 h2 {
   margin: 0 0 24px;
-  font-size: 30px;
+  font-size: 26px;
 }
 
 h3 {
   margin: 0 0 14px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: -0.03em;
@@ -67,12 +67,12 @@ footer {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 24px;
-  padding-left: 24px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 header {
-  padding-top: 64px;
+  padding-top: 40px;
   text-align: center;
 }
 
@@ -96,23 +96,29 @@ nav {
   margin-bottom: 28px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 12px 0;
+  padding: 8px 0;
 }
 
+/* 메뉴의 부모를 Flexbox로 만들고, 공간이 부족하면 다음 줄로 넘깁니다. */
 nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 20px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* Day 3에서는 작은 메뉴 항목만 inline-block으로 나란히 놓습니다. */
 nav li {
-  display: inline-block;
-  margin: 3px 12px;
+  margin: 0;
 }
 
 nav a {
-  padding: 4px 0;
+  display: block;
+  min-height: 44px;
+  padding: 10px 4px;
   font-size: 13px;
   text-decoration: none;
 }
@@ -122,23 +128,29 @@ nav a {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 1;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   object-position: center 67%;
   border-radius: 3px;
 }
 
-main {
-  max-width: 800px;
+/* 프로젝트 목록은 넓게, 긴 소개 문장은 읽기 편한 너비로 제한합니다. */
+#about,
+#interests,
+#goals,
+#links {
+  max-width: 752px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 section {
-  margin-top: 64px;
+  margin-top: 48px;
   scroll-margin-top: 24px;
 }
 
 #about p {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2;
 }
 
@@ -154,14 +166,30 @@ li::marker {
   color: var(--accent);
 }
 
-/* 6. 프로젝트: 얇은 구분선으로 각 소개를 구별합니다. */
-article {
-  border-top: 1px solid var(--line);
-  padding: 30px 0;
+/* 6. 프로젝트: 작은 화면에서는 세로로, 넓은 화면에서는 가로로 놓습니다. */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-article p {
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+}
+
+.project-card p {
   margin-bottom: 12px;
+}
+
+/* 세로 Flexbox에서 위쪽 남는 공간을 채워 같은 줄의 링크를 아래로 맞춥니다. */
+.project-card .project-link {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 8px;
 }
 
 .project-role {
@@ -169,16 +197,15 @@ article p {
   font-size: 13px;
 }
 
-article a {
+.project-card a {
   display: inline-block;
-  margin-top: 8px;
   font-size: 14px;
 }
 
 #goals {
   border: 1px solid var(--line);
   border-radius: 3px;
-  padding: 28px;
+  padding: 24px;
   background-color: var(--surface);
 }
 
@@ -222,7 +249,11 @@ a:focus-visible {
 }
 
 footer {
-  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 56px;
   border-top: 1px solid var(--line);
   padding-top: 24px;
   padding-bottom: 32px;
@@ -233,4 +264,68 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+/* 8. 반응형: 기본은 작은 화면, 768px 이상에서는 아래 규칙으로 조정합니다. */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 72px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  header,
+  main,
+  footer {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  header {
+    padding-top: 64px;
+  }
+
+  nav ul {
+    gap: 4px 24px;
+  }
+
+  .mood-image {
+    aspect-ratio: 3 / 1;
+  }
+
+  section {
+    margin-top: 64px;
+  }
+
+  #about p {
+    font-size: 17px;
+  }
+
+  .project-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .project-card {
+    /* 늘어남 1, 줄어듦 1, 배치 계산의 기준 너비 280px */
+    flex: 1 1 280px;
+  }
+
+  #goals {
+    padding: 28px;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 72px;
+    text-align: left;
+  }
 }

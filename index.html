@@ -58,30 +58,32 @@
     <section id="projects">
       <h2>대표 프로젝트</h2>
 
-      <!-- 각 프로젝트는 독립적인 소개이므로 article로 묶었습니다. -->
-      <article>
-        <h3>올클(AllCle)</h3>
-        <p>야구 티켓팅의 주요 과정을 반복해서 연습할 수 있는 웹 시뮬레이터입니다.</p>
-        <p class="project-role"><strong>담당 역할:</strong> 팀장, 기획, 백엔드 개발</p>
-        <p>티켓팅의 진행 단계와 API를 설계하고, 단계별 동작과 점수 산출 로직을 구현했습니다.</p>
-        <p><a href="https://github.com/tpgus72513/allcle">올클 GitHub 저장소 보기</a></p>
-      </article>
+      <!-- 부모 div가 배치를 담당하고, 각 article은 독립적인 프로젝트 소개입니다. -->
+      <div class="project-list">
+        <article class="project-card">
+          <h3>올클(AllCle)</h3>
+          <p>야구 티켓팅의 주요 과정을 반복해서 연습할 수 있는 웹 시뮬레이터입니다.</p>
+          <p class="project-role"><strong>담당 역할:</strong> 팀장, 기획, 백엔드 개발</p>
+          <p>티켓팅의 진행 단계와 API를 설계하고, 단계별 동작과 점수 산출 로직을 구현했습니다.</p>
+          <p class="project-link"><a href="https://github.com/tpgus72513/allcle">올클 GitHub 저장소 보기</a></p>
+        </article>
 
-      <article>
-        <h3>소상공인 상권 분석·마케팅 지원</h3>
-        <p>상권 분석 결과와 매장 정보를 바탕으로 AI 마케팅 문구를 만드는 서비스입니다.</p>
-        <p class="project-role"><strong>담당 역할:</strong> 팀장, 기획, AI 마케팅 콘텐츠 기능 개발</p>
-        <p>홍보 문구 생성과 수정 흐름을 연결하고, AI 호출 실패에 대응하는 대체 문구를 구현했습니다.</p>
-        <p><a href="https://github.com/tpgus72513/NxtCloud-2026-07">상권 분석·마케팅 지원 GitHub 저장소 보기</a></p>
-      </article>
+        <article class="project-card">
+          <h3>소상공인 상권 분석·마케팅 지원</h3>
+          <p>상권 분석 결과와 매장 정보를 바탕으로 AI 마케팅 문구를 만드는 서비스입니다.</p>
+          <p class="project-role"><strong>담당 역할:</strong> 팀장, 기획, AI 마케팅 콘텐츠 기능 개발</p>
+          <p>홍보 문구 생성과 수정 흐름을 연결하고, AI 호출 실패에 대응하는 대체 문구를 구현했습니다.</p>
+          <p class="project-link"><a href="https://github.com/tpgus72513/NxtCloud-2026-07">상권 분석·마케팅 지원 GitHub 저장소 보기</a></p>
+        </article>
 
-      <article>
-        <h3>세종페이(PAYUS)</h3>
-        <p>캠퍼스 학생과 지역 가맹점을 연결하는 학술 목적의 QR 간편결제 MVP입니다.</p>
-        <p class="project-role"><strong>담당 역할:</strong> 프론트엔드 개발</p>
-        <p>학생·가맹점 화면과 QR 결제 흐름을 연결하고, Git 이력에서 삭제된 소스를 복구했습니다.</p>
-        <p><a href="https://github.com/FIo-g/PAYUS">세종페이 GitHub 저장소 보기</a></p>
-      </article>
+        <article class="project-card">
+          <h3>세종페이(PAYUS)</h3>
+          <p>캠퍼스 학생과 지역 가맹점을 연결하는 학술 목적의 QR 간편결제 MVP입니다.</p>
+          <p class="project-role"><strong>담당 역할:</strong> 프론트엔드 개발</p>
+          <p>학생·가맹점 화면과 QR 결제 흐름을 연결하고, Git 이력에서 삭제된 소스를 복구했습니다.</p>
+          <p class="project-link"><a href="https://github.com/FIo-g/PAYUS">세종페이 GitHub 저장소 보기</a></p>
+        </article>
+      </div>
     </section>
 
     <section id="goals">
