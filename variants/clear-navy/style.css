@@ -1,0 +1,237 @@
+/* 1. 색상: 화이트, 블루그레이, 네이비로 정돈된 인상을 만듭니다. */
+:root {
+  --background: #f6f9fb;
+  --surface: #ffffff;
+  --text: #142b3b;
+  --muted: #5c6e7b;
+  --accent: #24617b;
+  --line: #d5e0e7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 2. 글자: 한글은 고딕체, 작은 영문 이름은 Manrope를 사용합니다. */
+h1,
+h2,
+h3 {
+  line-height: 1.45;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  margin: 26px 0 22px;
+  font-size: 76px;
+  font-weight: 500;
+}
+
+h2 {
+  margin: 0 0 28px;
+  font-size: 28px;
+}
+
+h3 {
+  margin: 0 0 16px;
+  font-size: 23px;
+}
+
+p {
+  margin: 0 0 18px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* 3. 여백: 같은 왼쪽 기준선에 내용을 맞춰 공식 문서처럼 정돈합니다. */
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 1040px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+header {
+  padding-top: 52px;
+}
+
+.eyebrow {
+  margin: 0;
+  border-top: 3px solid var(--text);
+  padding-top: 18px;
+  color: var(--muted);
+  font-family: "Manrope", "Noto Sans KR", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.intro {
+  max-width: 580px;
+  margin-bottom: 34px;
+  color: var(--muted);
+  font-size: 21px;
+  line-height: 1.8;
+  letter-spacing: -0.025em;
+}
+
+nav {
+  margin-bottom: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 24px 8px 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* 4. 이미지: 가로로 긴 프레임과 직선적인 모서리를 사용합니다. */
+.mood-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 5;
+  object-fit: cover;
+  object-position: center 48%;
+  border-radius: 0;
+}
+
+section {
+  margin-top: 68px;
+  scroll-margin-top: 28px;
+}
+
+#about p {
+  max-width: 780px;
+  font-size: 17px;
+  line-height: 2;
+}
+
+#interests ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+#interests li {
+  padding: 8px 0 8px 6px;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+/* 5. 프로젝트: 역할과 본문을 구분하되 장식은 얇은 선으로 제한합니다. */
+article {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+}
+
+article p {
+  max-width: 780px;
+  margin-bottom: 14px;
+}
+
+.project-role {
+  display: inline-block;
+  border-left: 2px solid var(--accent);
+  padding-left: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+article a {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#goals {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  padding: 28px;
+  background-color: var(--surface);
+}
+
+#goals ol {
+  margin: 0;
+  padding-left: 24px;
+}
+
+#goals li {
+  margin: 10px 0;
+  padding-left: 6px;
+}
+
+#links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#links li {
+  margin: 12px 0;
+}
+
+/* 6. 링크: 마우스와 키보드로 접근할 때 상태를 분명하게 표시합니다. */
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  padding-bottom: 32px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer p {
+  margin: 0;
+}
