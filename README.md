@@ -3,6 +3,14 @@
 언더독 웹 기초 챌린지로 만드는 권세현의 자기소개 페이지입니다.
 HTML과 CSS로 페이지를 구성하고, GitHub Pages로 배포하는 과정을 학습합니다.
 
+## 배포 페이지
+
+- **[로즈 머스크 — 제출용 기본 페이지](https://tpgus72513.github.io/about-me/)**
+- [클리어 네이비 — 비교 시안](https://tpgus72513.github.io/about-me/variants/clear-navy/index.html)
+- [Velog 학습 기록](https://velog.io/@tpgus72513/posts)
+
+GitHub Pages에서 `main` 브랜치의 최상위 폴더(`/`)를 배포하며 HTTPS를 사용합니다. 해당 브랜치에 변경 사항을 push하면 배포 작업이 다시 실행됩니다.
+
 ## 프로젝트 목적
 
 - HTML로 제목, 문단, 이미지, 링크 등 페이지의 구조를 작성합니다.
@@ -22,9 +30,11 @@ HTML과 CSS로 페이지를 구성하고, GitHub Pages로 배포하는 과정을
 
 ```text
 about-me/
+├── .nojekyll     # Jekyll 변환 없이 정적 파일을 배포
 ├── index.html    # 자기소개 페이지의 내용과 구조
 ├── style.css     # 기본 스타일, Flexbox와 반응형 배치
 ├── assets/
+│   ├── favicon.svg   # 브라우저 탭 아이콘
 │   └── rose-musk.png  # 로즈빛 유리와 빛을 담은 장식 이미지
 ├── variants/
 │   └── clear-navy/    # Day 3 클리어 네이비 비교 시안
@@ -35,8 +45,31 @@ about-me/
 └── README.md     # 프로젝트 소개와 실행 방법
 ```
 
-현재는 Day 4 단계로, 로즈 머스크 페이지의 메뉴·프로젝트·푸터에 Flexbox를 적용하고 화면 너비에 따라 배치와 글자 크기를 조정했습니다.
-GitHub Pages 배포와 최종 점검은 Day 5에서 진행할 예정입니다.
+Day 5에서 GitHub Pages 배포와 공개 주소의 동작 점검을 진행했습니다. 로즈 머스크는 Flexbox와 반응형 CSS를 적용한 제출용 페이지이고, 클리어 네이비는 Day 3 비교 시안입니다.
+Day 1~4 Velog 글은 아래에 연결했으며, Day 5 최종 회고는 게시 후 추가할 예정입니다.
+
+## 학습 기록
+
+| 단계 | Velog 글 |
+| --- | --- |
+| Day 1 | [자기소개 페이지 만들기 준비](https://velog.io/@tpgus72513/웹-기초-챌린지-Day-1-자기소개-페이지-만들기-준비) |
+| Day 2 | [HTML로 자기소개 페이지의 뼈대 만들기](https://velog.io/@tpgus72513/웹-기초-챌린지-Day-2-HTML로-자기소개-페이지의-뼈대-만들기) |
+| Day 3 | [두 가지 CSS 테마](https://velog.io/@tpgus72513/웹-기초-챌린지-Day-3-두-가지-CSS-테마) |
+| Day 4 | [Flexbox와 반응형 CSS로 배치하기](https://velog.io/@tpgus72513/Day-4-Flexbox와-반응형-CSS로-배치하기) |
+| Day 5 | 최종 회고 게시 후 연결 예정 |
+
+## Day 5 — 배포와 최종 점검
+
+- 배포 방식: Settings → Pages → Deploy from a branch → `main` / `(root)`
+- 정적 파일 배포: `.nojekyll`을 추가해 HTML·CSS·이미지를 그대로 제공합니다.
+- 공개 주소 확인: 두 페이지와 CSS·이미지·아이콘이 모두 HTTP 200으로 응답했습니다.
+- 화면 확인: 두 시안 모두 320·390·1440px에서 가로 넘침과 이미지 누락이 없었습니다.
+- HTML 확인: 중복 id, 누락된 메뉴 대상, 빈 링크 문구가 없었습니다.
+- 학습 기록 연결: 두 시안에 실제 Velog 프로필 링크를 추가했습니다.
+
+GitHub Pages는 저장소의 HTML·CSS·이미지를 웹 주소로 제공하는 정적 웹 호스팅입니다. 공개 주소는 로컬 미리보기 서버를 켜 두지 않아도 사용할 수 있습니다.
+
+배포 설정은 [GitHub 공식 문서](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)를 참고했습니다.
 
 ## Day 4 — Flexbox와 반응형 구성
 
