@@ -1,0 +1,236 @@
+/* 1. 색상: 이 값들을 바꾸면 페이지의 분위기를 함께 바꿀 수 있습니다. */
+:root {
+  --background: #f8f4f1;
+  --surface: #fffdfb;
+  --text: #3d3038;
+  --muted: #74636d;
+  --accent: #875668;
+  --line: #e4d5da;
+}
+
+/* 2. 기본 설정: padding과 border를 요소의 너비 안에 포함합니다. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 3. 글자: 명조체 제목과 고딕체 본문을 함께 사용합니다. */
+h1,
+h2 {
+  font-family: "Gowun Batang", "Batang", serif;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+h1 {
+  margin: 14px 0 18px;
+  font-size: 72px;
+  letter-spacing: 0.08em;
+}
+
+h2 {
+  margin: 0 0 24px;
+  font-size: 30px;
+}
+
+h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.03em;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* 4. 여백: margin은 바깥쪽, padding은 안쪽 여백입니다. */
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+header {
+  padding-top: 64px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 0;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.intro {
+  max-width: 400px;
+  margin: 0 auto 36px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+nav {
+  margin-bottom: 28px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Day 3에서는 작은 메뉴 항목만 inline-block으로 나란히 놓습니다. */
+nav li {
+  display: inline-block;
+  margin: 3px 12px;
+}
+
+nav a {
+  padding: 4px 0;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* 5. 이미지: 너비에 맞추고, 정해진 비율 안을 자연스럽게 채웁니다. */
+.mood-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  object-position: center 67%;
+  border-radius: 3px;
+}
+
+main {
+  max-width: 800px;
+}
+
+section {
+  margin-top: 64px;
+  scroll-margin-top: 24px;
+}
+
+#about p {
+  font-size: 17px;
+  line-height: 2;
+}
+
+#interests ul {
+  padding-left: 22px;
+}
+
+#interests li {
+  padding: 8px 0 8px 6px;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+/* 6. 프로젝트: 얇은 구분선으로 각 소개를 구별합니다. */
+article {
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+}
+
+article p {
+  margin-bottom: 12px;
+}
+
+.project-role {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+article a {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+#goals {
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 28px;
+  background-color: var(--surface);
+}
+
+#goals ol {
+  margin: 0;
+  padding-left: 24px;
+}
+
+#goals li {
+  margin: 10px 0;
+  padding-left: 6px;
+}
+
+#links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#links li {
+  margin: 12px 0;
+}
+
+/* 7. 링크: 기본·마우스·키보드 상태를 알아보기 쉽게 표현합니다. */
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+a:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+footer {
+  margin-top: 72px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  padding-bottom: 32px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
